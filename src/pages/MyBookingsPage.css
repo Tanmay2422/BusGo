@@ -1,0 +1,209 @@
+.my-bookings-page { padding: 2.5rem 0 5rem; }
+
+.bookings-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.bookings-header h1 { font-size: 1.75rem; margin-bottom: 0.25rem; }
+
+/* Filter Tabs */
+.filter-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  background: white;
+  padding: 0.375rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  width: fit-content;
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: none;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+}
+.filter-tab:hover { color: var(--text-primary); background: var(--bg-primary); }
+.filter-tab.active { background: var(--accent); color: white; }
+
+.tab-count {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.1rem 0.4rem;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.25);
+  min-width: 20px;
+  text-align: center;
+}
+.filter-tab:not(.active) .tab-count { background: var(--border-light); color: var(--text-muted); }
+
+/* Bookings List */
+.bookings-list { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.booking-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--border-light);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  transition: var(--transition);
+}
+.booking-card:hover { box-shadow: var(--shadow-lg); border-color: rgba(233,69,96,0.2); }
+
+/* Upcoming Ribbon */
+.upcoming-ribbon {
+  position: absolute;
+  top: 0; right: 0;
+  background: var(--success);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.3rem 1.25rem 0.3rem 0.875rem;
+  border-radius: 0 var(--radius-lg) 0 var(--radius-md);
+}
+
+/* Card Header */
+.booking-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1.5rem;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.bref-label { display: block; font-size: 0.72rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; color: var(--text-muted); }
+.bref-value { font-weight: 800; font-family: 'Sora', sans-serif; font-size: 0.95rem; color: var(--text-primary); }
+
+.booking-status-badge {
+  padding: 0.3rem 0.875rem;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Card Body */
+.booking-card-body { padding: 1.5rem; }
+
+.booking-route-section { margin-bottom: 1.25rem; }
+.booking-bus-name { font-weight: 800; font-size: 1.05rem; margin-bottom: 0.2rem; }
+.booking-bus-sub { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 1rem; }
+
+.booking-route-display {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brd-city { display: flex; flex-direction: column; }
+.brd-time { font-size: 1.1rem; font-weight: 800; font-family: 'Sora', sans-serif; }
+.brd-name { font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--text-secondary); letter-spacing: 0.04em; }
+
+.brd-line {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+.brd-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+.brd-track { flex: 1; height: 2px; background: linear-gradient(to right, var(--accent), var(--primary)); }
+
+/* Details Grid */
+.booking-details-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--bg-primary);
+  border-radius: var(--radius-md);
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-light);
+}
+
+.bd-item { display: flex; flex-direction: column; gap: 0.25rem; }
+.bd-label { font-size: 0.72rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.04em; color: var(--text-muted); }
+.bd-value { font-size: 0.875rem; font-weight: 600; display: flex; flex-wrap: wrap; gap: 0.25rem; align-items: center; }
+
+.mini-seat-chip {
+  background: var(--primary);
+  color: white;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+/* Passenger Names */
+.passenger-names { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.pname-tag {
+  background: white;
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Card Footer */
+.booking-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border-light);
+  background: var(--bg-primary);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ba-label { display: block; font-size: 0.72rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); letter-spacing: 0.04em; }
+.ba-value { font-size: 1.25rem; font-weight: 800; font-family: 'Sora', sans-serif; color: var(--primary); }
+
+.booking-actions { display: flex; gap: 0.625rem; flex-wrap: wrap; }
+
+/* Empty State */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  text-align: center;
+  background: white;
+  border-radius: var(--radius-xl);
+  border: 1.5px dashed var(--border);
+  gap: 1rem;
+}
+
+.empty-icon { font-size: 4rem; }
+.empty-state h3 { font-size: 1.25rem; }
+.empty-state p { color: var(--text-secondary); max-width: 380px; }
+
+@media (max-width: 900px) {
+  .booking-details-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .booking-details-grid { grid-template-columns: 1fr 1fr; }
+  .filter-tabs { overflow-x: auto; max-width: 100%; }
+  .bookings-header { flex-direction: column; align-items: flex-start; }
+  .booking-card-header, .booking-card-body, .booking-card-footer { padding-left: 1rem; padding-right: 1rem; }
+}

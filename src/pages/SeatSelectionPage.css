@@ -1,0 +1,336 @@
+.seat-selection-page {
+  padding: 2rem 0 5rem;
+  min-height: 100vh;
+}
+
+/* Page Header */
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.back-btn {
+  background: white;
+  border: 1.5px solid var(--border);
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+.back-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+.route-display {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  flex: 1;
+}
+.route-city { font-size: 1.25rem; font-weight: 800; font-family: 'Sora', sans-serif; }
+.route-arrow { color: var(--accent); font-size: 1.25rem; }
+.date-display { font-size: 0.9rem; color: var(--text-secondary); font-weight: 500; }
+
+/* Steps Indicator */
+.steps-indicator {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 2rem;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  flex: 1;
+}
+
+.step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  background: var(--border-light);
+  color: var(--text-muted);
+  transition: var(--transition);
+  font-family: 'Sora', sans-serif;
+}
+
+.step.active .step-num {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 4px 12px rgba(233,69,96,0.35);
+}
+
+.step.done .step-num {
+  background: var(--success);
+  color: white;
+}
+
+.step-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.step.active .step-label { color: var(--text-primary); }
+.step.done .step-label { color: var(--success); }
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  background: var(--border);
+  margin: 0 0.5rem;
+}
+
+/* Layout */
+.selection-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.selection-main { min-width: 0; }
+
+/* Step Card */
+.step-card { overflow: visible; }
+
+.card-header-custom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+  background: var(--bg-primary);
+}
+
+.card-header-custom h3 { font-size: 1.1rem; }
+
+.seat-count-badge {
+  background: var(--accent-light);
+  color: var(--accent);
+  padding: 0.3rem 0.875rem;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.seat-grid-section {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  background: white;
+}
+
+.step-footer {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--border-light);
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Passengers Form */
+.passengers-form { padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
+
+.passenger-card {
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.passenger-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.passenger-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.seat-tag {
+  background: var(--accent-light);
+  color: var(--accent);
+  padding: 0.2rem 0.625rem;
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.passenger-fields { padding: 1rem; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Review Section */
+.review-section { padding: 1.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
+
+.review-bus-info {
+  background: var(--bg-primary);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  border: 1px solid var(--border-light);
+}
+
+.review-bus-info h4 { font-size: 1.1rem; margin-bottom: 0.25rem; }
+
+.review-route {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.review-time-city { display: flex; flex-direction: column; }
+.rv-time { font-size: 1.2rem; font-weight: 800; font-family: 'Sora', sans-serif; }
+.rv-city { font-size: 0.78rem; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; }
+
+.rv-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, var(--accent), var(--primary));
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rv-duration {
+  background: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.review-date { font-size: 0.875rem; color: var(--text-secondary); font-weight: 500; }
+
+.review-passengers h4 { margin-bottom: 1rem; }
+
+.review-passenger-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1rem;
+  background: var(--bg-primary);
+  border-radius: var(--radius-md);
+  margin-bottom: 0.625rem;
+  border: 1px solid var(--border-light);
+}
+
+.rp-left { display: flex; align-items: center; gap: 0.75rem; }
+
+.rp-num {
+  width: 28px;
+  height: 28px;
+  background: var(--accent);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.rp-name { font-weight: 600; font-size: 0.9rem; }
+.rp-details { font-size: 0.78rem; color: var(--text-secondary); }
+.rp-seat { background: var(--primary); color: white; padding: 0.2rem 0.625rem; border-radius: 100px; font-size: 0.78rem; font-weight: 700; }
+
+.booking-total {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.total-label { font-size: 0.78rem; color: var(--text-secondary); font-weight: 600; }
+.total-value { font-size: 1.5rem; font-weight: 800; font-family: 'Sora', sans-serif; color: var(--primary); }
+
+/* Summary Card */
+.summary-card {
+  position: sticky;
+  top: 90px;
+  border: 1.5px solid var(--border-light);
+}
+
+.summary-header {
+  padding: 1rem 1.25rem;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--primary);
+  color: white;
+  font-family: 'Sora', sans-serif;
+}
+
+.summary-body { padding: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+
+.summary-bus { margin-bottom: 0.5rem; }
+.summary-bus-name { font-weight: 700; font-size: 0.95rem; }
+.summary-bus-type { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  gap: 0.5rem;
+}
+.summary-row span:first-child { color: var(--text-secondary); }
+.summary-row span:last-child { font-weight: 600; text-align: right; }
+
+.summary-divider { height: 1px; background: var(--border); margin: 0.25rem 0; }
+
+.summary-total {
+  font-size: 1rem !important;
+}
+.summary-total span:first-child { font-weight: 700 !important; color: var(--text-primary) !important; }
+.summary-total span:last-child { font-size: 1.25rem; font-weight: 800 !important; color: var(--accent) !important; font-family: 'Sora', sans-serif; }
+
+@media (max-width: 900px) {
+  .selection-layout { grid-template-columns: 1fr; }
+  .booking-summary { order: -1; }
+  .summary-card { position: static; }
+}
+
+@media (max-width: 640px) {
+  .steps-indicator { padding: 1rem; gap: 0; }
+  .step-label { display: none; }
+  .form-row { grid-template-columns: 1fr; }
+  .step-footer { flex-direction: column; align-items: stretch; }
+  .step-footer .btn { width: 100%; justify-content: center; }
+}
